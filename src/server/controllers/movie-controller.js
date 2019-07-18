@@ -20,7 +20,7 @@ class movieController {
 
   // Read All Movies
 
-  static async getMovies(req, res, next) {
+  static async getMovies(req, res) {
     res.send(await Movie.find());
   }
 
