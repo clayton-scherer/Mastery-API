@@ -20,7 +20,7 @@ class actorController {
 
   // Read All Actors
 
-  static async getActors(req, res, next) {
+  static async getActors(req, res) {
     res.send(await Actor.find());
   }
 
