@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const movieController = require("../controllers/movie-controller");
 
 /* Create Movie. */
 router.post("/", movieController.addMovie);

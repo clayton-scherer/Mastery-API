@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const actorController = require("../controllers/actor-controller");
 
 /* Create Actor. */
 router.post("/", actorController.addActor);
