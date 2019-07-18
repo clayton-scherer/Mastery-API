@@ -4,8 +4,8 @@ const logger = require("morgan");
 
 require("./src/server/models/db");
 
-const indexRouter = require("./routes/index");
-const usersRouter = require("./routes/users");
+const indexRouter = require("./src/server/routes/index");
+const usersRouter = require("./src/server/routes/users");
 
 const app = express();
 
