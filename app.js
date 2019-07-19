@@ -6,6 +6,7 @@ require("./src/server/models/db");
 
 const actorRouter = require("./src/server/routes/actor-router");
 const movieRouter = require("./src/server/routes/movie-router");
+const categoryRouter = require("./src/server/routes/category-router");
 
 const app = express();
 
@@ -16,5 +17,6 @@ app.use(cookieParser());
 
 app.use("/actors", actorRouter);
 app.use("/movies", movieRouter);
+app.use("/categories", categoryRouter);
 
 module.exports = app;
