@@ -15,8 +15,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
-app.use("/actors", actorRouter);
-app.use("/movies", movieRouter);
-app.use("/categories", categoryRouter);
+app.use("/api/actors", actorRouter);
+app.use("/api/movies", movieRouter);
+app.use("/api/categories", categoryRouter);
 
 module.exports = app;
