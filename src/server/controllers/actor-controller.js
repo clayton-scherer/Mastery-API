@@ -2,16 +2,15 @@ const Actor = require("../models/Actor");
 
 class actorController {
   // Create Actor
+
   static async addActor(req, res) {
     const firstName = req.body.firstName;
     const lastName = req.body.lastName;
-    const movies = req.body.movies;
     const image = req.body.image;
 
     Actor.create({
       firstName: firstName,
       lastName: lastName,
-      movies: movies,
       image: image
     });
 
@@ -55,6 +54,7 @@ class actorController {
   }
 
   // Delete Actor
+
   static async deleteActor(req, res) {
     const id = req.params.id;
 
