@@ -49,10 +49,26 @@ class categoryController {
   }
 
   // Delete Category
+
   static async deleteCategory(req, res) {
     const id = req.params.id;
 
     res.send(await Category.remove({ _id: id }));
+  }
+
+  // Add Movies
+
+  static async addMovies(req, res) {
+    const id = req.params.id;
+    const moviesToAdd = req.body;
+
+    const categoryToAdd = await Category.findById({ _id: id });
+    moviesToAdd.forEach(movie => {
+      categoryToAdd.movies.push(movie);
+    });
+    categoryToAdd.save(categoryToAdd);
+
+    res.send(await categoryToAdd);
   }
 }
 

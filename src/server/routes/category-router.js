@@ -17,4 +17,7 @@ router.put("/:id", categoryController.updateCategory);
 // Delete Category
 router.delete("/:id", categoryController.deleteCategory);
 
+// Add Movies
+router.put("/:id/addMovies", categoryController.addMovies);
+
 module.exports = router;

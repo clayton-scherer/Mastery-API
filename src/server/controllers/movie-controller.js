@@ -62,6 +62,21 @@ class movieController {
 
     res.send(await Movie.remove({ _id: id }));
   }
+
+  // Add Actors
+
+  static async addActors(req, res) {
+    const id = req.params.id;
+    const actorsToAdd = req.body;
+
+    const movieToAdd = await Movie.findById({ _id: id });
+    actorsToAdd.forEach(actor => {
+      movieToAdd.cast.push(actor);
+    });
+    movieToAdd.save(movieToAdd);
+
+    res.send(await movieToAdd);
+  }
 }
 
 module.exports = movieController;

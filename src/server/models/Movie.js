@@ -5,6 +5,6 @@ module.exports = mongoose.model("Movie", {
   category: { type: mongoose.Schema.Types.ObjectId, ref: "Category" },
   director: { type: String },
   image: { type: String },
-  rating: { type: Number, default: 0},
+  rating: { type: Number },
   title: { type: String }
 });
