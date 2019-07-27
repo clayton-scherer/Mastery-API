@@ -12,7 +12,7 @@ class categoryController {
     res.send(await Category.find());
   }
 
-  // Read All Categorys
+  // Read All Categories
 
   static async getCategories(req, res) {
     res.send(await Category.find());

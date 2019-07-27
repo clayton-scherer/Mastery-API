@@ -2,6 +2,7 @@ const Movie = require("../models/Movie");
 
 class movieController {
   // Create Movie
+
   static async addMovie(req, res) {
     const director = req.body.director;
     const image = req.body.image;
@@ -55,6 +56,7 @@ class movieController {
   }
 
   // Delete Movie
+
   static async deleteMovie(req, res) {
     const id = req.params.id;
 
