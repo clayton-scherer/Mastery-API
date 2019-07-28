@@ -2,7 +2,6 @@ const Category = require("../models/Category");
 
 class categoryController {
   // Create Category
-
   static async addCategory(req, res) {
     const name = req.body.name;
 
@@ -24,7 +23,7 @@ class categoryController {
   static async getCategory(req, res) {
     const id = req.params.id;
 
-    res.send(await Category.findOne({ _id: id }));
+    res.send(await Category.findOne({ _id: id }).populate("movies"));
   }
 
   // Update Category
@@ -55,6 +54,21 @@ class categoryController {
     const id = req.params.id;
 
     res.send(await Category.remove({ _id: id }));
+  }
+
+  // Add Movies
+
+  static async addMovies(req, res) {
+    const id = req.params.id;
+    const moviesToAdd = req.body;
+
+    const categoryToAdd = await Category.findById({ _id: id });
+    moviesToAdd.forEach(movie => {
+      categoryToAdd.movies.push(movie);
+    });
+    categoryToAdd.save(categoryToAdd);
+
+    res.send(await categoryToAdd);
   }
 }
 
