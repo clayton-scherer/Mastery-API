@@ -23,7 +23,7 @@ class categoryController {
   static async getCategory(req, res) {
     const id = req.params.id;
 
-    res.send(await Category.findOne({ _id: id }));
+    res.send(await Category.findOne({ _id: id }).populate("movies"));
   }
 
   // Update Category

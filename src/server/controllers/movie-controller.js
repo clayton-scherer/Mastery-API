@@ -30,7 +30,7 @@ class movieController {
   static async getMovie(req, res) {
     const id = req.params.id;
 
-    res.send(await Movie.findOne({ _id: id }));
+    res.send(await Movie.findOne({ _id: id }).populate("movies"));
   }
 
   // Update Movie
